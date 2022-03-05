@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\BurgerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -20,5 +21,9 @@ Route::get('/', function () {
 Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
+
+Route::get('/burger', [BurgerController::class, 'show'])->middleware(['auth'])->name('burger.show');
+Route::get('/burger/edit', [BurgerController::class, 'edit'])->middleware(['auth'])->name('burger.edit');
+Route::get('/burger/delete', [BurgerController::class, 'delete'])->middleware(['auth'])->name('burger.delete');
 
 require __DIR__.'/auth.php';
