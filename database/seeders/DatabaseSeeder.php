@@ -2,7 +2,7 @@
 
 namespace Database\Seeders;
 
-use Illuminate\Database\Console\Seeds\WithoutModelEvents;
+use App\Models\Order;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
@@ -20,16 +20,6 @@ class DatabaseSeeder extends Seeder
             'password' => Hash::make('adminadmin'),
             'email' => 'admin@gmail.com'
         ])->create();
-        \App\Models\Burger::factory(1)->state([
-           'name' => 'McInion',
-        ])->create();
-        \App\Models\Burger::factory(1)->state([
-            'name' => 'Prince',
-        ])->create();
-        \App\Models\Burger::factory(1)->state([
-            'name' => 'Azulero',
-        ])->create();
-        \App\Models\Burger::factory(5)->create();
-        // \App\Models\User::factory(10)->create();
+        Order::factory(5)->create();
     }
 }
