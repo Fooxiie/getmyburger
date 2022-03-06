@@ -28,7 +28,7 @@
                         </div>
                         <div class="flex space-x-4">
                             <a href="{{route('burger.edit', ['id' => $burger->id])}}">✏</a>
-                            <a href="{{route('burger.delete')}}">❌</a>
+                            <a href="{{route('burger.delete', ['id' => $burger->id])}}">❌</a>
                         </div>
                     </div>
                 </div>

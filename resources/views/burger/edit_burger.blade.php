@@ -7,7 +7,7 @@
 
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <form>
+            <form action="{{route('burger.edit_submit', array('id' => $burger->id))}}" method="post">
                 @csrf
                 <div class="shadow overflow-hidden sm:rounded-md">
                     <div class="px-4 py-5 bg-white sm:p-6">
@@ -23,7 +23,7 @@
                             <div class="col-span-6 sm:col-span-3">
                                 <label for="price"
                                        class="block text-sm font-medium text-gray-700">{{__('backoffice.burger_price')}}</label>
-                                <input type="text" name="price" id="price" value="{{$burger->price}}"
+                                <input type="text" name="price" id="price" value="{{number_format($burger->price, 2)}}"
                                        class="mt-1 focus:ring-indigo-500 focus:border-indigo-500 block w-full shadow-sm sm:text-sm border-gray-300 rounded-md">
                             </div>
 
