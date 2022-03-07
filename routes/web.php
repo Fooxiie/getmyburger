@@ -30,5 +30,6 @@ Route::get('/burger/delete', [BurgerController::class, 'delete'])->middleware(['
 
 Route::get('/order', [OrderController::class, 'show'])->middleware(['auth'])->name('order.show');
 Route::get('/order/delete', [OrderController::class, 'delete'])->middleware(['auth'])->name('order.delete');
+Route::get('/order/resume', [OrderController::class, 'resume'])->middleware(['auth'])->name('order.resume');
 
 require __DIR__ . '/auth.php';

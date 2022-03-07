@@ -25,7 +25,7 @@
     </x-slot>
 
     <div class="py-12">
-        <a href="" class="px-4 py-2 font-semibold text-sm bg-white text-slate-700 flex items-center mx-auto
+        <a href="{{route('order.resume')}}" class="px-4 py-2 font-semibold text-sm bg-white text-slate-700 flex items-center mx-auto
                                     border border-slate-300 rounded-md shadow-sm mb-8 w-48 text-center">
             Générer la commmande du jour
         </a>

@@ -24,4 +24,22 @@ class OrderController extends Controller
         $order->delete();
         return back();
     }
+
+    public function resume(Request $request)
+    {
+        $orders = Order::getTodayOrders();
+        $fries = 0;
+        $burgers = array();
+        $globalPrice = 0;
+        foreach ($orders as $order) {
+            $globalPrice += $order->totalPrice();
+            $fries += $order->fries;
+            if (!isset($burgers[$order->burger->name])) {
+                $burgers[$order->burger->name] = 1;
+            } else {
+                $burgers[$order->burger->name] = $burgers[$order->burger->name] + 1;
+            }
+        }
+        return view('order.resume_order', compact('burgers', 'fries', 'globalPrice'));
+    }
 }
