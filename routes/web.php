@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\BurgerController;
+use App\Http\Controllers\OrderController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -27,4 +28,7 @@ Route::get('/burger/edit', [BurgerController::class, 'edit'])->middleware(['auth
 Route::post('/burger/edit_submit', [BurgerController::class, 'edit_submit'])->middleware(['auth'])->name('burger.edit_submit');
 Route::get('/burger/delete', [BurgerController::class, 'delete'])->middleware(['auth'])->name('burger.delete');
 
-require __DIR__.'/auth.php';
+Route::get('/order', [OrderController::class, 'show'])->middleware(['auth'])->name('order.show');
+Route::get('/order/delete', [OrderController::class, 'delete'])->middleware(['auth'])->name('order.delete');
+
+require __DIR__ . '/auth.php';

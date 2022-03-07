@@ -8,5 +8,7 @@ return [
     'burger_price' => 'Prix',
     'burger_description' => 'Description',
     'updated_at' => 'Mise à jour le',
-    'created_at' => 'Créé le'
+    'created_at' => 'Créé le',
+    'order' => 'Commande',
+    'orders' => 'Commandes',
 ];

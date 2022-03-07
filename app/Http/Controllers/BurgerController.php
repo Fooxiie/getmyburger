@@ -34,6 +34,6 @@ class BurgerController extends Controller
     {
         $burger = Burger::query()->find($request->query('id'));
         $burger->delete();
-        return view('burger.burger');
+        return back();
     }
 }

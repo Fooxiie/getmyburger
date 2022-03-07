@@ -23,12 +23,13 @@
                                 </p>
                             </div>
                             <div class="inline-flex items-center text-base font-semibold text-gray-900 dark:text-black">
-                                {{number_format($burger->price,2)}}
+                                {{number_format($burger->price,2)}} €
                             </div>
                         </div>
                         <div class="flex space-x-4">
                             <a href="{{route('burger.edit', ['id' => $burger->id])}}">✏</a>
-                            <a href="{{route('burger.delete', ['id' => $burger->id])}}">❌</a>
+                            <a onclick="return confirm('Really nigga ?')"
+                               href="{{route('burger.delete', ['id' => $burger->id])}}">❌</a>
                         </div>
                     </div>
                 </div>

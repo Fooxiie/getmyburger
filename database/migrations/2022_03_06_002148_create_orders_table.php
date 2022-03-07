@@ -14,7 +14,7 @@ return new class extends Migration {
     {
         Schema::create('orders', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('burger_id')->constrained('burgers');
+            $table->foreignId('burger_id')->constrained('burgers')->cascadeOnDelete()->cascadeOnUpdate();
             $table->string('customer');
             $table->string('drink');
             $table->tinyInteger('fries');
