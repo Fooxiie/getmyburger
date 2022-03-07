@@ -21,5 +21,8 @@ class DatabaseSeeder extends Seeder
             'email' => 'admin@gmail.com'
         ])->create();
         Order::factory(5)->create();
+        Order::factory(5)->state([
+            'created_at' => '2022/03/06 23:59:00'
+        ])->create();
     }
 }
