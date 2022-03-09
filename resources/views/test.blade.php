@@ -23,45 +23,54 @@
             <div class="max-w-5xl mx-auto px-6 sm:px-6 lg:px-8 mb-12">
                 <div class="bg-gray-900 w-full shadow rounded p-8 sm:p-12 -mt-72">
                     <p class="text-3xl font-bold leading-7 text-center text-white">
-                        I Want To Get My Burger</p>
-                    <form action="" method="post">
+                        {{__('backoffice.burger_day')}} 🍔</p>
+                    <form action="#" method="get">
+                        <div class="md:flex items-center mt-8">
+                            <div class="w-full flex flex-col">
+                                <label for="customer"
+                                       class="font-semibold leading-none
+                                    text-gray-300">{{__('backoffice.firstname')}}</label>
+                                <input type="text" name="customer" id="customer" required
+                                       class="leading-none text-gray-50 p-3 focus:outline-none focus:border-blue-700 mt-4 border-0 bg-gray-800 rounded"/>
+
+                            </div>
+                        </div>
                         <div class="md:flex items-center mt-12">
                             <div class="w-full md:w-1/2 flex flex-col">
-                                <label
-                                    class="font-semibold leading-none
-                                    text-gray-300">Mon nom</label>
-                                <input type="text"
-                                       class="leading-none text-gray-50 p-3 focus:outline-none focus:border-blue-700 mt-4 border-0 bg-gray-800 rounded"/>
+                                <label for="drink"
+                                       class="font-semibold leading-none text-gray-300">{{__('backoffice.drink')}}</label>
+                                <select type="text" id="drink" name="drink" required
+                                        class="leading-none text-gray-50 p-3 focus:outline-none focus:border-blue-700 mt-4 border-0 bg-gray-800 rounded">
+                                    @foreach(\App\Enums\Drinks::asArray() as $drink)
+                                        <option>{{$drink}}</option>
+                                    @endforeach
+                                </select>
                             </div>
                             <div
                                 class="w-full md:w-1/2 flex flex-col md:ml-6 md:mt-0 mt-4">
-                                <label
-                                    class="font-semibold leading-none text-gray-300">Phone</label>
-                                <input type="email"
+                                <label for="fries"
+                                       class="font-semibold leading-none text-gray-300">{{__('backoffice.nbfries')}}</label>
+                                <input type="number" max="5" id="fries" name="fries" required
                                        class="leading-none text-gray-50 p-3 focus:outline-none focus:border-blue-700 mt-4 border-0 bg-gray-800 rounded"/>
                             </div>
                         </div>
-                        <div class="md:flex items-center mt-8">
-                            <div class="w-full flex flex-col">
-                                <label
-                                    class="font-semibold leading-none text-gray-300">Subject</label>
-                                <input type="text"
-                                       class="leading-none text-gray-50 p-3 focus:outline-none focus:border-blue-700 mt-4 border-0 bg-gray-800 rounded"/>
-                            </div>
-
-                        </div>
-                        <div>
-                            <div class="w-full flex flex-col mt-8">
-                                <label
-                                    class="font-semibold leading-none text-gray-300">Message</label>
-                                <textarea type="text"
-                                          class="h-40 text-base leading-none text-gray-50 p-3 focus:outline-none focus:border-blue-700 mt-4 bg-gray-800 border-0 rounded"></textarea>
+                        <div class="md:flex items-center mt-10 mb-2">
+                            <div class="w-full grid grid-cols-4 gap-4">
+                                @php($nbBurger = \App\Models\Burger::all()->count())
+                                @foreach(\App\Models\Burger::all() as $burger)
+                                    <div class="mt-4">
+                                        <input required type="radio" id="burger{{$burger->id}}" name="burger"
+                                               value="{{$burger->id}}"/>
+                                        <label class="text-gray-200" for="burger{{$burger->id}}"
+                                               class="font-semibold leading-none text-gray-300">🍔 {{$burger->name}}</label>
+                                    </div>
+                                @endforeach
                             </div>
                         </div>
                         <div class="flex items-center justify-center w-full">
                             <button
                                 class="mt-9 font-semibold leading-none text-white py-4 px-10 bg-blue-700 rounded hover:bg-blue-600 focus:ring-2 focus:ring-offset-2 focus:ring-blue-700 focus:outline-none">
-                                Passé commande 🤑
+                                {{__('actions.submit')}} 🤑
                             </button>
                         </div>
                     </form>

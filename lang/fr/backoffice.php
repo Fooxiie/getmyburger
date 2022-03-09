@@ -11,4 +11,9 @@ return [
     'created_at' => 'Créé le',
     'order' => 'Commande',
     'orders' => 'Commandes',
+    'burger_day' => 'It\'s burger day !',
+    'firstname' => 'Prénom',
+    'fries' => 'frites',
+    'nbfries' => 'Nombre de frites',
+    'drink' => 'Boisson'
 ];

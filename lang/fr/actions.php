@@ -4,5 +4,6 @@ return [
     'edit' => 'Modifier',
     'editing' => 'Modification',
     'delete' => 'Supprimer',
-    'save' => 'Sauvegarder'
+    'save' => 'Sauvegarder',
+    'submit' => 'Passé commande'
 ];
