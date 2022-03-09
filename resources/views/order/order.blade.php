@@ -53,7 +53,7 @@
                                 </div>
                                 <p class="text-sm text-gray-500 truncate dark:text-gray-400">
                                     🍔 <b>{{$order->burger->name}}</b> 🍟 <b>{{$order->fries}}</b> 🥤
-                                    <b>{{$order->drink}}</b>
+                                    <b>{{$order->drink}}</b> 🍗 <b>{{$order->crispy}}</b>
                                 </p>
                                 @if ($isfiltered)
                                     <p class="text-sm text-gray-500 truncate dark:text-gray-400">

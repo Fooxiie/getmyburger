@@ -53,6 +53,13 @@
                                 <input type="number" max="5" id="fries" name="fries" required
                                        class="leading-none text-gray-50 p-3 focus:outline-none focus:border-blue-700 mt-4 border-0 bg-gray-800 rounded"/>
                             </div>
+                            <div
+                                class="w-full md:w-1/2 flex flex-col md:ml-6 md:mt-0 mt-4">
+                                <label for="crispy"
+                                       class="font-semibold leading-none text-gray-300">{{__('backoffice.nbCrispy')}}</label>
+                                <input type="number" max="5" id="crispy" name="crispy" required
+                                       class="leading-none text-gray-50 p-3 focus:outline-none focus:border-blue-700 mt-4 border-0 bg-gray-800 rounded"/>
+                            </div>
                         </div>
                         <div class="md:flex items-center mt-10 mb-2">
                             <div class="w-full grid grid-cols-4 gap-4">

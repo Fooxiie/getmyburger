@@ -21,7 +21,8 @@ class OrderFactory extends Factory
             'burger_id' => Burger::factory(),
             'customer' => $this->faker->name,
             'drink' => $this->faker->city,
-            'fries' => $this->faker->numberBetween(0, 5)
+            'fries' => $this->faker->numberBetween(0, 5),
+            'crispy' => $this->faker->numberBetween(0, 2)
         ];
     }
 }

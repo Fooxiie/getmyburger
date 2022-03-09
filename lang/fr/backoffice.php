@@ -15,5 +15,6 @@ return [
     'firstname' => 'Prénom',
     'fries' => 'frites',
     'nbfries' => 'Nombre de frites',
+    'nbCrispy' => 'Nombre de CrispyBox',
     'drink' => 'Boisson'
 ];

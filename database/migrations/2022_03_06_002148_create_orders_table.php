@@ -17,6 +17,7 @@ return new class extends Migration {
             $table->foreignId('burger_id')->constrained('burgers')->cascadeOnDelete()->cascadeOnUpdate();
             $table->string('customer');
             $table->string('drink');
+            $table->tinyInteger('crispy');
             $table->tinyInteger('fries');
             $table->timestamps();
         });
