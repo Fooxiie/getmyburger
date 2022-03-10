@@ -5,5 +5,5 @@ return [
     'editing' => 'Modification',
     'delete' => 'Supprimer',
     'save' => 'Sauvegarder',
-    'submit' => 'Passé commande'
+    'submit' => 'Passer commande'
 ];

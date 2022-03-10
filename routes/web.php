@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\BurgerController;
 use App\Http\Controllers\OrderController;
+use App\Models\Order;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,7 +18,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
     return view('test');
-});
+})->name('welcome');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
@@ -31,5 +32,6 @@ Route::get('/burger/delete', [BurgerController::class, 'delete'])->middleware(['
 Route::get('/order', [OrderController::class, 'show'])->middleware(['auth'])->name('order.show');
 Route::get('/order/delete', [OrderController::class, 'delete'])->middleware(['auth'])->name('order.delete');
 Route::get('/order/resume', [OrderController::class, 'resume'])->middleware(['auth'])->name('order.resume');
+Route::post('order/submit', [OrderController::class, 'submit'])->name('order.submit');
 
 require __DIR__ . '/auth.php';

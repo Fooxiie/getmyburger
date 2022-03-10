@@ -24,7 +24,8 @@
                 <div class="bg-gray-900 w-full shadow rounded p-8 sm:p-12 -mt-72">
                     <p class="text-3xl font-bold leading-7 text-center text-white">
                         {{__('backoffice.burger_day')}} 🍔</p>
-                    <form action="#" method="get">
+                    <form action="{{route('order.submit')}}" method="post">
+                        @csrf
                         <div class="md:flex items-center mt-8">
                             <div class="w-full flex flex-col">
                                 <label for="customer"

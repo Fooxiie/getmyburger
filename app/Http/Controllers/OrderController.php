@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Burger;
 use App\Models\Order;
 use Illuminate\Http\Request;
 
@@ -43,5 +44,17 @@ class OrderController extends Controller
             }
         }
         return view('order.resume_order', compact('burgers', 'fries', 'globalPrice', 'crispys'));
+    }
+
+    public function submit(Request $request)
+    {
+        $order = new Order();
+        $order->customer = $request->input('customer');
+        $order->drink = $request->input('drink');
+        $order->fries = $request->input('fries');
+        $order->crispy = $request->input('crispy');
+        $order->burger_id =  $request->input('burger');
+        $order->save();
+        return view('order.order_ok');
     }
 }
