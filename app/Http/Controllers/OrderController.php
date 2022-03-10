@@ -55,6 +55,10 @@ class OrderController extends Controller
         $order->crispy = $request->input('crispy');
         $order->burger_id =  $request->input('burger');
         $order->save();
+        return redirect(route('order.ok'));
+    }
+
+    public function ok() {
         return view('order.order_ok');
     }
 }
