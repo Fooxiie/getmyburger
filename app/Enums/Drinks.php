@@ -19,4 +19,5 @@ final class Drinks extends Enum
     const IceTea = 'Ice-tea';
     const Water = 'Vittel';
     const Perrier = 'Perrier';
+    const Aucune = 'Aucun';
 }

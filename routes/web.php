@@ -17,7 +17,16 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('test');
+    if (date('l') == "Thursday") {
+        $time = new DateTime("now", new DateTimeZone("Europe/Paris"));
+        if ($time->format('H') >= 11) {
+            return view('finish');
+        } else {
+            return view('test');
+        }
+    } else {
+        return view('badday');
+    }
 })->name('welcome');
 
 Route::get('/dashboard', function () {

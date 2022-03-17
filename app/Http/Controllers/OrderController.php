@@ -30,6 +30,7 @@ class OrderController extends Controller
     {
         $orders = Order::getTodayOrders();
         $fries = 0;
+        $nbBurger = $orders->count();
         $crispys = 0;
         $burgers = array();
         $globalPrice = 0;
@@ -43,7 +44,7 @@ class OrderController extends Controller
                 $burgers[$order->burger->name] = $burgers[$order->burger->name] + 1;
             }
         }
-        return view('order.resume_order', compact('burgers', 'fries', 'globalPrice', 'crispys'));
+        return view('order.resume_order', compact('burgers', 'fries', 'globalPrice', 'crispys', 'nbBurger'));
     }
 
     public function submit(Request $request)
