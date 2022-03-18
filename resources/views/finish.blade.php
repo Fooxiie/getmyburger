@@ -1,8 +1,28 @@
 <x-guest-layout>
-    <div class="relative text-center text-gray-200 flex items-top justify-center
+    <div
+        class="relative flex items-top justify-center min-h-screen bg-gray-100 dark:bg-gray-900 sm:items-center sm:pt-0">
+        @if (Route::has('login'))
+            <div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+                @auth
+                    <a href="{{ url('/dashboard') }}"
+                       class="text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
+                @else
+                    <a href="{{ route('login') }}"
+                       class="text-sm text-gray-700 dark:text-gray-500 underline">Log
+                        in</a>
+
+                    @if (Route::has('register'))
+                        <a href="{{ route('register') }}"
+                           class="ml-4 text-sm text-gray-700 dark:text-gray-500 underline">Register</a>
+                    @endif
+                @endauth
+            </div>
+        @endif
+        <div class="relative text-center text-gray-200 flex items-top justify-center
     min-h-screen
     bg-gray-100 dark:bg-gray-900 sm:items-center py-4 sm:pt-0">
-        C'est fini ! <br /> (Les commandes ne peuvent être prise que jusqu'à
-        11h !)
+            C'est fini ! <br/> (Les commandes ne peuvent être prise que jusqu'à
+            11h !)
+        </div>
     </div>
 </x-guest-layout>
