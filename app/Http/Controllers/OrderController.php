@@ -2,7 +2,6 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Burger;
 use App\Models\Order;
 use Illuminate\Http\Request;
 
@@ -54,12 +53,14 @@ class OrderController extends Controller
         $order->drink = $request->input('drink');
         $order->fries = $request->input('fries');
         $order->crispy = $request->input('crispy');
-        $order->burger_id =  $request->input('burger');
+        $order->burger_id = $request->input('burger');
         $order->save();
-        return redirect(route('order.ok'));
+        return redirect(route('order.ok', compact('order')));
     }
 
-    public function ok() {
-        return view('order.order_ok');
+    public function ok(Request $request)
+    {
+        $order = Order::query()->find($request->query('order'));
+        return view('order.order_ok', compact('order'));
     }
 }

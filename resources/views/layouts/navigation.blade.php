@@ -63,7 +63,6 @@
                         <x-dropdown-link :href="route('debug')">
                             {{__('backoffice.debug')}}
                         </x-dropdown-link>
-                        </form>
                     </x-slot>
                 </x-dropdown>
             </div>
