@@ -20,7 +20,7 @@
 
         <div class="w-full bg-gray-800">
             <div class="bg-gradient-to-b from-blue-800 to-blue-600 h-96"></div>
-            <div class="max-w-5xl mx-auto px-6 sm:px-6 lg:px-8 mb-12">
+            <div class="max-w-9xl mx-auto px-6 sm:px-6 lg:px-8 mb-12">
                 <div class="bg-gray-900 w-full shadow rounded p-8 sm:p-12 -mt-72">
                     <p class="text-3xl font-bold leading-7 text-center text-white">
                         {{__('backoffice.burger_day')}} 🍔</p>
@@ -30,9 +30,11 @@
                             <div class="w-full flex flex-col">
                                 <label for="customer"
                                        class="font-semibold leading-none
-                                    text-gray-300">{{__('backoffice.firstname')}}</label>
+                                    text-gray-300 mx-auto">{{__('backoffice.firstname')}}</label>
                                 <input type="text" name="customer" id="customer" required
-                                       class="leading-none text-gray-50 p-3 focus:outline-none focus:border-blue-700 mt-4 border-0 bg-gray-800 rounded"/>
+                                       class="leading-none text-gray-50 p-3
+                                       focus:outline-none mx-auto
+                                       focus:border-blue-700 mt-4 border-0 bg-gray-800 rounded max-w-5xl"/>
 
                             </div>
                         </div>
@@ -71,6 +73,11 @@
                                                value="{{$burger->id}}"/>
                                         <label class="text-gray-200" for="burger{{$burger->id}}"
                                                class="font-semibold leading-none text-gray-300">🍔 {{$burger->name}}</label>
+                                        <label
+                                            class="text-gray-200 font-bold">{{number_format($burger->price, 2)}}€</label>
+                                        <br />
+                                        <label
+                                            class="text-gray-200">{{$burger->description}}</label>
                                     </div>
                                 @endforeach
                             </div>
