@@ -33,6 +33,10 @@ Route::get('/dashboard', function () {
     return view('dashboard');
 })->middleware(['auth'])->name('dashboard');
 
+Route::get('/debug', function () {
+    return view('index');
+});
+
 Route::get('/burger', [BurgerController::class, 'show'])->middleware(['auth'])->name('burger.show');
 Route::get('/burger/edit', [BurgerController::class, 'edit'])->middleware(['auth'])->name('burger.edit');
 Route::post('/burger/edit_submit', [BurgerController::class, 'edit_submit'])->middleware(['auth'])->name('burger.edit_submit');
