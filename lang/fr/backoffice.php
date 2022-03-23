@@ -16,5 +16,6 @@ return [
     'fries' => 'frites',
     'nbfries' => 'Nombre de frites',
     'nbCrispy' => 'Nombre de CrispyBox',
-    'drink' => 'Boisson'
+    'drink' => 'Boisson',
+    'debug' => 'Debug'
 ];

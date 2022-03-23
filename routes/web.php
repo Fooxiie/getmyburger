@@ -2,7 +2,6 @@
 
 use App\Http\Controllers\BurgerController;
 use App\Http\Controllers\OrderController;
-use App\Models\Order;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -35,7 +34,7 @@ Route::get('/dashboard', function () {
 
 Route::get('/debug', function () {
     return view('index');
-});
+})->middleware(['auth'])->name('debug');
 
 Route::get('/burger', [BurgerController::class, 'show'])->middleware(['auth'])->name('burger.show');
 Route::get('/burger/edit', [BurgerController::class, 'edit'])->middleware(['auth'])->name('burger.edit');
