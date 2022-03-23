@@ -10,20 +10,22 @@
                           d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/>
                 </svg>
             </a>
-            Commande passé
+            {{__('backoffice.cmd_passed')}}
             <div style="margin-top: 10px;margin-bottom: 30px;" class="text-right">
-                <label>N° de commande : #{{$order->id}}</label>
+                <label>{{__('backoffice.cmd_nb')}} : #{{$order->id}}</label>
                 <hr/>
                 <ul>
                     <li>{{$order->burger->name}} : <b>{{number_format($order->burger->price, 2)}}€</b></li>
-                    <li>{{$order->fries}} frites : <b>{{number_format($order->fries * 2.50, 2)}}€</b></li>
-                    <li>{{$order->crispy}} CrispyBox : <b>{{number_format($order->crispy * 5, 2)}}€</b></li>
+                    <li>{{$order->fries}} {{__('backoffice.fries')}} : <b>{{number_format($order->fries * 2.50, 2)}}
+                            €</b></li>
+                    <li>{{$order->crispy}} {{__('backoffice.crispy')}} : <b>{{number_format($order->crispy * 5, 2)}}
+                            €</b></li>
                     <li>{{$order->drink}} : <b>0.00€</b></li>
                 </ul>
                 <hr style="margin-top: 10px;"/>
-                Total : <b>{{number_format($order->totalPrice(), 2)}}€</b>
+                {{__('backoffice.total')}} <b>{{number_format($order->totalPrice(), 2)}}€</b>
             </div>
-            Merci de votre commande ❤
+            {{__('backoffice.cmd_thx')}}
         </div>
     </div>
 </x-guest-layout>
