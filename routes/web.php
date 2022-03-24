@@ -21,7 +21,7 @@ Route::get('/', function () {
         if ($time->format('H') >= 11) {
             return view('finish');
         } else {
-            return view('test');
+            return view('index');
         }
     } else {
         return view('badday');
