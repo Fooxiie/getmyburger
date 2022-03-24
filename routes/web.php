@@ -37,6 +37,7 @@ Route::get('/debug', function () {
 })->middleware(['auth'])->name('debug');
 
 Route::get('/burger', [BurgerController::class, 'show'])->middleware(['auth'])->name('burger.show');
+Route::get('/burger/new', [BurgerController::class, 'new'])->middleware(['auth'])->name('burger.new');
 Route::get('/burger/edit', [BurgerController::class, 'edit'])->middleware(['auth'])->name('burger.edit');
 Route::post('/burger/edit_submit', [BurgerController::class, 'edit_submit'])->middleware(['auth'])->name('burger.edit_submit');
 Route::get('/burger/delete', [BurgerController::class, 'delete'])->middleware(['auth'])->name('burger.delete');

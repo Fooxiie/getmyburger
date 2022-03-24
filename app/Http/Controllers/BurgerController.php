@@ -20,9 +20,17 @@ class BurgerController extends Controller
         return view('burger.edit_burger', compact('burger'));
     }
 
+    public function new() {
+        $burger = new Burger();
+        return view('burger.edit_burger', compact('burger'));
+    }
+
     public function edit_submit(Request $request)
     {
         $burger = Burger::query()->find($request->query('id'));
+        if ( $burger == null ) {
+            $burger = new Burger();
+        }
         $burger->name = $request->input('name');
         $burger->price = $request->input('price');
         $burger->description = $request->input('description');
