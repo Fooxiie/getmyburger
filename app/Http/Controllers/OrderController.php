@@ -63,4 +63,11 @@ class OrderController extends Controller
         $order = Order::query()->find($request->query('order'));
         return view('order.order_ok', compact('order'));
     }
+
+    public function paid(Request $request) {
+        $order = Order::query()->find($request->query('id'));
+        $order->paid = ($order->paid == 1) ? 0 : 1;
+        $order->save();
+        return redirect(route('order.show'));
+    }
 }

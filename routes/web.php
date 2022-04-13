@@ -47,5 +47,7 @@ Route::get('/order/delete', [OrderController::class, 'delete'])->middleware(['au
 Route::get('/order/resume', [OrderController::class, 'resume'])->middleware(['auth'])->name('order.resume');
 Route::post('/order/submit', [OrderController::class, 'submit'])->name('order.submit');
 Route::get('/order/ok', [OrderController::class, 'ok'])->name('order.ok');
+Route::get('/order/paid', [OrderController::class, 'paid'])->middleware(['auth'])
+    ->name('order.paid');
 
 require __DIR__ . '/auth.php';

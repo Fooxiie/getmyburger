@@ -19,6 +19,7 @@ return new class extends Migration {
             $table->string('drink');
             $table->tinyInteger('crispy');
             $table->tinyInteger('fries');
+            $table->boolean('paid')->default(false);
             $table->timestamps();
         });
     }
