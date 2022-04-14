@@ -18,7 +18,7 @@ return [
     'nbCrispy' => 'Nombre de CrispyBox',
     'drink' => 'Boisson',
     'debug' => 'Debug',
-    'cmd_passed' => 'Commande passé',
+    'cmd_passed' => 'Commande passée',
     'cmd_nb' => 'N° de commande',
     'crispy' => 'CripsyBox',
     'total' => 'Total :',
