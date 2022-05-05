@@ -29,8 +29,8 @@ class Order extends Model
     {
         $burger = $this->burger;
         $price = $burger->price;
-        $price = $price + (2.50 * $this->fries);
-        $price = $price + (5.00 * $this->crispy);
+        $price = $price + (3 * $this->fries);
+        $price = $price + (5.50 * $this->crispy);
         return $price;
     }
 }

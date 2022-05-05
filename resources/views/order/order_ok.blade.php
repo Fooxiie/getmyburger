@@ -16,9 +16,11 @@
                 <hr/>
                 <ul>
                     <li>{{$order->burger->name}} : <b>{{number_format($order->burger->price, 2)}}€</b></li>
-                    <li>{{$order->fries}} {{__('backoffice.fries')}} : <b>{{number_format($order->fries * 2.50, 2)}}
+                    <li>{{$order->fries}} {{__('backoffice.fries')}} :
+                        <b>{{number_format($order->fries * 3, 2)}}
                             €</b></li>
-                    <li>{{$order->crispy}} {{__('backoffice.crispy')}} : <b>{{number_format($order->crispy * 5, 2)}}
+                    <li>{{$order->crispy}} {{__('backoffice.crispy')}} :
+                        <b>{{number_format($order->crispy * 5.50, 2)}}
                             €</b></li>
                     <li>{{$order->drink}} : <b>0.00€</b></li>
                 </ul>
