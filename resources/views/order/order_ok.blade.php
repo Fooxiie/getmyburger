@@ -10,7 +10,7 @@
                           d="M17 17h2a2 2 0 002-2v-4a2 2 0 00-2-2H5a2 2 0 00-2 2v4a2 2 0 002 2h2m2 4h6a2 2 0 002-2v-4a2 2 0 00-2-2H9a2 2 0 00-2 2v4a2 2 0 002 2zm8-12V5a2 2 0 00-2-2H9a2 2 0 00-2 2v4h10z"/>
                 </svg>
             </a>
-            {{__('backoffice.cmd_passed')}}
+            {{__('backoffice.cmd_passed')}} : {{$order->customer}}
             <div style="margin-top: 10px;margin-bottom: 30px;" class="text-right">
                 <label>{{__('backoffice.cmd_nb')}} : #{{$order->id}}</label>
                 <hr/>
